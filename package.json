@@ -1,0 +1,15 @@
+{
+  "name": "google-review-widget",
+  "version": "1.0.0",
+  "description": "This widget pulls Google reviews using Google Place API and can be embedded onto your website",
+  "main": "grw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Google-Place-API",
+    "reivews"
+  ],
+  "author": "Leo Lee",
+  "license": "MIT"
+}
