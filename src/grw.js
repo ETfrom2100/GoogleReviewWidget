@@ -63,21 +63,25 @@
 			{
 				return;
 			}
-				
-			var grw_wrapper = GRW.helpers.createElem('div',{
-				className:'grw-wrapper',
-				
-			});
 			
-			target.appendChild(grw_wrapper);
-			var theme_wrapper = GRW.helpers.createElem('div',{
-				className:'google-reviews grw-theme-'+options.theme
-			});
-			grw_wrapper.appendChild(theme_wrapper);
+			if(place_details)
+			{
+				var grw_wrapper = GRW.helpers.createElem('div',{
+					className:'grw-wrapper',
+
+				});
+
+				target.appendChild(grw_wrapper);
+				var theme_wrapper = GRW.helpers.createElem('div',{
+					className:'google-reviews grw-theme-'+options.theme
+				});
+				grw_wrapper.appendChild(theme_wrapper);
+
+				var widget_header = GRW.buildWidgetHeader(place_details);
+				var reviews_wrapper = GRW.buildReviews(place_details);
+				var widget_footer = GRW.buildWidgetFooter();
+			}
 			
-			var widget_header = GRW.buildWidgetHeader();
-			var reviews_wrapper = GRW.buildReviews();
-			var widget_footer = GRW.buildWidgetFooter();
 		}
 		
 	};
@@ -89,16 +93,20 @@
 			service.getDetails({
 				placeId: options.placeid
 			}, function(place, status) {
-										  if (status === google.maps.places.PlacesServiceStatus.OK) {
-										  	console.log(place)
-										  }
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+							return place;
+				}
+				else
+				{
+					return false;
+				}
 		    });
 		}
 	};
-	GRW.buildWidgetHeader = function(){
+	GRW.buildWidgetHeader = function(place){
 		
 	};
-	GRW.buildReviews = function(){
+	GRW.buildReviews = function(place){
 		
 	};
 	GRW.buildWidgetFooter = function(){
