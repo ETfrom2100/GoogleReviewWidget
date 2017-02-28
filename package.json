@@ -4,12 +4,20 @@
   "description": "This widget pulls Google reviews using Google Place API and can be embedded onto your website",
   "main": "grw.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git push -u origin master",
+	"start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+	"production": "webpack --progress -p"
   },
   "keywords": [
     "Google-Place-API",
     "reivews"
   ],
   "author": "Leo Lee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
 }
