@@ -1,6 +1,6 @@
 /**
 * @app GoolgeReviewWidget
-* @desc A widget pulls up to 5 Google reviews using Google Place API
+* @desc A widget pulls up to 5 Google reviews using Google Place Javascript API
 * @version 1.0.0
 * @license The MIT License (MIT)
 * @author Leo Lee
@@ -85,8 +85,8 @@
 			target:'',
 			placeid:'',
 			theme:'dark',//light,dark
-			'numOfWords':20, //max number of words for each review. default:20
-			'hasNav':false
+			numOfWords:20, //max number of words for each review. default:20
+			hasNav:false
 		};
 		options = GRW.helpers.extendObj({},defaults,options);
 		console.log(options);
