@@ -40,6 +40,44 @@
 				elem[key] = props[key];
 			}
 			return elem;
+		},
+		//If a review has more words than the max number of words set in the options, add ellipsis to it
+		ellipsis:function(elem,numOfWords){
+			
+			var text = elem.textContent;
+			
+			var words_count = text.split(/\s+/).length;
+			
+			if(words_count > numOfWords)
+			{
+				var trimmedText = text.split(/\s+/,numOfWords).join(' ')+'...';
+				
+				elem.textContent = trimmedText;
+				
+				var rm_link_wrapper = document.createElement('div');
+				var rm_link = GRW.helpers.createElem('a',{
+					className:'rm-link'
+				});
+				rm_link.textContent = 'Read More';
+				rm_link_wrapper.appendChild(rm_link);
+				elem.parentElement.appendChild(rm_link_wrapper);
+				rm_link.addEventListener('click',function(){
+					if(this.getAttribute('data-clicked') !== 'true')
+					{
+						elem.textContent = text;
+						this.textContent = 'Read Less';
+						this.setAttribute('data-clicked',true);
+					}
+					else
+					{
+						elem.textContent = trimmedText;
+						this.textContnet = 'Read More';
+						this.setAttribute('data-clicked',false);
+					}
+					
+				});
+			}
+			
 		}
 	};
 	GRW.init = function(options){
@@ -47,7 +85,7 @@
 			target:'',
 			placeid:'',
 			theme:'dark',//light,dark
-			'readmore':false,
+			'numOfWords':20, //max number of words for each review. default:20
 			'hasNav':false
 		};
 		options = GRW.helpers.extendObj({},defaults,options);
@@ -81,6 +119,15 @@
 								theme_wrapper.appendChild(widget_header);
 								theme_wrapper.appendChild(reviews_wrapper);
 								theme_wrapper.appendChild(widget_footer);
+						
+						        if(options.numOfWords > 0)
+								{
+									var reviews = document.querySelectorAll('.grw-review-content p');
+									reviews.forEach(function(aReview,idx){
+										
+										GRW.helpers.ellipsis(aReview,options.numOfWords);
+									});
+								}
 					}
 					
 				});
