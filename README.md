@@ -31,6 +31,7 @@ numOfWords: 20 ////max number of words for each review. default:20
 });
 ```
 Google Place ID can be found here: 
+
 https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
 
 ## Browser compatibility
