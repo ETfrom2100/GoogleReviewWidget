@@ -6,7 +6,8 @@ A javascript widget plugin that pulls up to 5 Google business reviews
 
 #### Requirement
 
-```Google Maps Javascript API and the Places Library
+Google Maps Javascript API and the Places Library
+```html
 <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>
 ```
 
