@@ -2,6 +2,8 @@
 
 A javascript widget plugin that pulls up to 5 Google business reviews 
 
+Inspired by: https://wordpress.org/plugins/google-places-reviews/
+
 ## How to use
 
 #### Requirement
