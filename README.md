@@ -27,7 +27,8 @@ $GrwJS.init({
 target:'#review_widget',
 placeid:'ChIJpcanZ0L2wokRoWs8p9gEJcM', //Google place ID
 theme:'dark', //dark or light
-numOfWords: 20 ////max number of words for each review. default:20
+numOfWords: 20 //max number of words for each review. default:20,
+horizontal:true //display reviews in a horizontal slider if true; otherwise, display reviews vertically; true as default 
 });
 ```
 Google Place ID can be found here: 
