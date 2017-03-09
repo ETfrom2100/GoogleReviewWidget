@@ -80,7 +80,39 @@
 				});
 			}
 			
-		}
+		},
+		initSlider:function(container){
+			var links = container.querySelectorAll( ".grw-slider-nav a" );
+			var wrapper = container.querySelector( ".grw-slider-wrapper" );
+			for( var i = 0; i < links.length; i++ ) {
+				var aLink = links[i];
+				if(document.addEventListener)
+				{
+					aLink.addEventListener( "click", function( e ) {
+						e.preventDefault();
+						var a = this;
+						//self.setCurrentLink( a );
+						
+
+						a.className = "grw-slide-current";
+
+						for( var j = 0; j<links.length; ++j ) {
+							var cur = links[j];
+							if( cur !== a ) {
+								cur.className = "";
+							}
+						}
+						var index = parseInt( a.getAttribute( "data-grw-slide" ), 10 ) + 1;
+						var currentSlide = container.querySelector( ".grw-review-slide:nth-child(" + index + ")" );
+
+						wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
+						//self.animate( currentSlide );
+
+					}, false);
+				}
+			}
+		},
+		
 	};
 	GRW.init = function(options){
 		var defaults = {
@@ -198,6 +230,7 @@
 		{
 			slider_wrapper.appendChild(reviews_wrapper);
 			slider_wrapper.appendChild(slider_nav);
+			GRW.helpers.initSlider(slider_wrapper);
 			return slider_wrapper;
 		}
 		else
