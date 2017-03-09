@@ -8,11 +8,15 @@ Inspired by: https://wordpress.org/plugins/google-places-reviews/
 
 ## How to use
 
-#### Requirement
+#### Installation
 
-Google Maps Javascript API and the Places Library
+Include files
+
 ```html
-<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>
+<link  href="/path/to/grw-styles.css" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script><!--Google Maps Javascript API and the Places Library -->
+<script src="/path/to/grw.min.js"></script>
+
 ```
 
 #### HTML
