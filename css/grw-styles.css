@@ -140,18 +140,6 @@ div.grw-review-content .rm-link{
 	-webkit-opacity:0.8;
 	filter:alpha(opacity=80);
 }
-.grw-loading-icon{
-	position:absolute;
-	top:115px;
-	left:45%;
-	background-image: url(../imgs/loading.png);
-	width:25px;
-	height:25px;
-	background-size:25px 25px;
-	background-repeat:no-repeat;
-}
-
-/* CSS Document */
 
 .grw-theme-light .rm-link{
 	color:#7E7975;
@@ -189,34 +177,7 @@ div.grw-review-content .rm-link{
 	width:144px;
 	height:18px;
 }
-.grw-theme-light .poweredByYelp{
-	margin:auto;
-	background-image:url(../imgs/powered_by_yelp_on_white.png);
-	background-repeat:no-repeat;
-	width:136px;
-	height:25px;
-}
-.grw-theme-dark .poweredByYelp{
-	margin:auto;
-	background-image:url(../imgs/powered_by_yelp_on_non_white.png);
-	background-repeat:no-repeat;
-	width:136px;
-	height:25px;
-}
-.grw-theme-light .grw-attributions{
-	color:#7E7975;
-}
-.grw-theme-dark .grw-attributions{
-	color:#fff;
-}
-.grw-theme-light .grw-attributions a, [class*="grw-theme-light-"] .grw-attributions a:visited{
-	
-	color:#333;
-}
-.grw-theme-dark .grw-attributions a, [class*="grw-theme-dark-"] .grw-attributions a:visited{
-	
-	color:#aaa;
-}
+
 .grw-theme-light .grw-slider-nav a{
 	display: inline-block;
     width: 10px;
