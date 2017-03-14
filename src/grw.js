@@ -91,9 +91,7 @@
 					aLink.addEventListener( "click", function( e ) {
 						e.preventDefault();
 						var a = this;
-						//self.setCurrentLink( a );
 						
-
 						a.className = "grw-slide-current";
 
 						for( var j = 0; j<links.length; ++j ) {
@@ -106,7 +104,7 @@
 						var currentSlide = container.querySelector( ".grw-review-slide:nth-child(" + index + ")" );
 
 						wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
-						//self.animate( currentSlide );
+						
 
 					}, false);
 				}
