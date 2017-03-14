@@ -11,14 +11,13 @@
 	var GRW = {};
 	GRW.helpers = {
 		extendObj:function(){
-			//console.log(arguments);
+			
 			for(var i=1; i<arguments.length;i++)
 			{
 				for(var key in arguments[i])
 				{
 					if(arguments[i].hasOwnProperty(key))
 					{
-						//console.log(arguments[i][key].constructor);
 						if(arguments[i][key] && arguments[i][key].constructor && arguments[i][key].constructor === Object)
 						{
 							arguments[0][key] = arguments[i][key] || {};
@@ -33,12 +32,12 @@
 			}
 			return arguments[0];
 		},
+		//a helper for creating a DOM element
 		createElem:function(tag,props){
 			var elem = document.createElement(tag);
 			
 			for(var key in props)
 			{
-				//elem[key] = props[key];
 				elem.setAttribute(key, props[key]);
 			}
 			return elem;
@@ -81,6 +80,7 @@
 			}
 			
 		},
+		//display the reviews horizontally as a slider
 		initSlider:function(container){
 			var links = container.querySelectorAll( ".grw-slider-nav a" );
 			var wrapper = container.querySelector( ".grw-slider-wrapper" );
@@ -112,6 +112,7 @@
 		},
 		
 	};
+	//initialize the widget
 	GRW.init = function(options){
 		var defaults = {
 			target:'',
@@ -121,7 +122,7 @@
 			horizontal:true //display reviews horizontally
 		};
 		options = GRW.helpers.extendObj({},defaults,options);
-		console.log(options);
+		
 		var target = document.querySelector(options.target);
 		if(target)
 		{
@@ -175,7 +176,7 @@
 		}
 		
 	};
-	
+	//build the widget header
 	GRW.buildWidgetHeader = function(place){
 		console.log(place);
 		var place_name = place.name;
@@ -188,6 +189,7 @@
 		
 		return header_wrapper;
 	};
+	//build the widget body
 	GRW.buildReviews = function(place,options){
 		var wrapper_class = 'grw-reviews-wrapper';
 		var review_class = 'grw-review';
@@ -239,6 +241,7 @@
 		
 		
 	};
+	//build the widget footer
 	GRW.buildWidgetFooter = function(){
 		var footer_wrapper = GRW.helpers.createElem('div',{
 									class:'grw-business-footer grw-clear-fix'
