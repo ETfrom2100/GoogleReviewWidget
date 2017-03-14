@@ -119,7 +119,9 @@
 			placeid:'',
 			theme:'dark',//light,dark
 			numOfWords:20, //max number of words for each review. default:20
-			horizontal:true //display reviews horizontally
+			horizontal:true, //display reviews horizontally
+			autoScroll:false, //automatically scroll the reivew horizontally; horizontal has to be set to true
+			scrollInterval:8000 //an interval on how often to scroll the review horizontally; default: 8s
 		};
 		options = GRW.helpers.extendObj({},defaults,options);
 		
@@ -178,7 +180,7 @@
 	};
 	//build the widget header
 	GRW.buildWidgetHeader = function(place){
-		console.log(place);
+		
 		var place_name = place.name;
 		var place_url = place.url;
 		var place_rating = place.rating;
@@ -231,6 +233,22 @@
 			slider_wrapper.appendChild(reviews_wrapper);
 			slider_wrapper.appendChild(slider_nav);
 			GRW.helpers.initSlider(slider_wrapper);
+			//if autoScroll is set to true, set an interval to automatically scroll the review horizontally
+			if(options.autoScroll === true )
+			{
+			    
+				setInterval(function(){
+					
+					var current_nav_dot = slider_nav.querySelector('.grw-slide-current');
+					var next_nav_dot = current_nav_dot.nextSibling;
+					if(next_nav_dot == null)
+					{
+						next_nav_dot = slider_nav.firstChild;
+					}
+					next_nav_dot.click();
+					
+				},options.scrollInterval);
+			}
 			return slider_wrapper;
 		}
 		else
