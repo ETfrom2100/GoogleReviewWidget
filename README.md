@@ -34,7 +34,9 @@ target:'#review_widget',
 placeid:'ChIJpcanZ0L2wokRoWs8p9gEJcM', //Google place ID
 theme:'dark', //dark or light
 numOfWords: 20 //max number of words for each review. default:20,
-horizontal:true //display reviews in a horizontal slider if true; otherwise, display reviews vertically; true as default 
+horizontal:true, //display reviews in a horizontal slider if true; otherwise, display reviews vertically; true as default 
+autoScroll:true, //automatically scroll the reivew horizontally; horizontal has to be set to true; false as default
+scrollInterval:8000 //an interval on how often to scroll the review horizontally; default: 8s
 });
 ```
 Google Place ID can be found here: 
