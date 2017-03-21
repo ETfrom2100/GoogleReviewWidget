@@ -121,7 +121,7 @@
 			numOfWords:20, //max number of words for each review. default:20
 			horizontal:true, //display reviews horizontally
 			autoScroll:false, //automatically scroll the reivew horizontally; horizontal has to be set to true
-			scrollInterval:8000 //an interval on how often to scroll the review horizontally; default: 8s
+			scrollInterval:8 //an interval on how often to scroll the review horizontally; default: 8s
 		};
 		options = GRW.helpers.extendObj({},defaults,options);
 		
@@ -247,7 +247,7 @@
 					}
 					next_nav_dot.click();
 					
-				},options.scrollInterval);
+				},options.scrollInterval*1000);
 			}
 			return slider_wrapper;
 		}
